@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 倍數檢查
+        // 取餘數（餘數為0=倍數）
+        // 習作(1)  
+        var num3 = 17;
+        var num4 = 3;
+
+        if (num3 % num4 == 0 ) {
+            console.log(`${num3}是${num4}的倍數`);
+        } else {
+            console.log(`${num3}不是${num4}的倍數`);
+        }
+
+        // 習作(2)
+        // 未完成!!
+        var num5=13;
+        var result=num5+"是211的倍數";
+
+        if(num5%211==0){
+            result=num5+"不是211的倍數";           
+        }
+        console.log(`${num5}${result}`);
+
+
+        // 奇偶數判斷
+        // 跟2相除取餘數（1=奇數，0=偶數）
+
+        // 解答(1)
+        var num1 = 7;
+
+        if (num1 % 2 == 1) {
+            console.log(`${num1}是偶數`);
+        } else {
+            console.log(`${num1}是奇數`);
+        }
+
+        // 解答(2)
+        var num2 = 13;
+        var result = "偶數";
+
+        if (num2 % 2 == 1) {
+            result = "奇數";
+        }
+
+        console.log(`${num2}是${result}`);
+
+
+        // 成績檢查（有效分數範圍：0-100）
+        var score = 101;
+        if (score > 100 || score < 0) {
+            alert("SCORE ERROR!");
+        } else {
+            if (score >= 60) {
+                console.log("及格");
+            } else {
+                console.log("不及格");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 課堂作業：帳密檢測
+        var a = "admin";
+        var b = "1234";
+        var c = undefined
+
+        var d = a + b
+        if (d = a + "1234") {
+            console.log("帳密正確");
+        } else if (d = a + c) {
+            console.log("密碼錯誤");
+        } else if (d = c + d) {
+            console.log("帳號錯誤");
+        } else if (d = c + c) {
+            console.log("帳密都錯");
+        }
+    </script>
+
+    <script>
+        // 老師解答
+        var a = "admin";
+        var b = "1234";
+
+        // 解答(1)巢狀檢測：帳號正確再檢查密碼正確
+        // 帳號正確
+        if (a === "admin") {
+            // 密碼正確
+            if (b === "1234") {
+                console.log("帳密正確")
+            // 密碼錯誤
+            } else {
+                console.log("密碼錯誤")
+            }
+
+        // 帳號錯誤
+        }else{
+            // 密碼正確
+            if(b==="1234"){
+                console.log("帳號錯誤")
+            // 密碼錯誤
+            }else{
+                console.log("帳密都錯")
+            }
+        }
+
+            // 解答(2)運算子
+            var a = "admin";
+            var b = "1234";
+
+            // 帳號正確
+            if (a === "admin") {
+                // 密碼正確
+                if (b === "1234")
+                    console.log("帳密正確")
+            } else {
+                // 密碼錯誤
+                console.log("密碼錯誤")
+            }
+
+    </script>
+</body>
+
+</html>

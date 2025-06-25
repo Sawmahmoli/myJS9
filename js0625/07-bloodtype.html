@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 血型判斷(1)
+        // A, B, O, AB
+
+        // 建立一個血型變數存放使用者輸入的血型
+        // var blood = "";
+        // // 輸入視窗
+        // blood = prompt("請輸入血型");
+        // console.log(blood);
+
+        // if (blood == "A" || blood == "a") {
+        //     console.log("A型");
+        // } else if (blood == "B" || blood == "b") {
+        //     console.log("B型");
+        // } else if (blood == "O" || blood == "o") {
+        //     console.log("O型");
+        // } else if (blood == "Ab" || blood == "ab" || blood == "AB" || blood == "aB") {
+        //     console.log("AB型");
+        // } else {
+        //     console.log("不存在" + blood + "血型");
+        // }
+
+        // 血型判斷(2)(多層檢查方法1)
+        var blood = "";
+        // 輸入視窗
+        // 將輸入資料轉成大 / 小寫：toUpperCase() / toLowerCase()
+        blood = prompt("請輸入血型").toUpperCase();
+        if (blood == "A") {
+            console.log("A型");
+        } else if (blood == "B") {
+            console.log("B型");
+        } else if (blood == "O") {
+            console.log("O型");
+        } else if (blood == "AB") {
+            console.log("AB型");
+        } else {
+            console.log("不存在" + blood + "血型");
+        }
+
+
+        // 血型判斷(3)(多層檢查方法2)
+        var blood = "";
+        // 輸入視窗
+        // 將輸入資料轉成大 / 小寫：toUpperCase() / toLowerCase()
+        blood = prompt("請輸入血型").toUpperCase();
+
+        switch (blood) {
+            case "A":
+                console.log("A型");
+                break;
+            case "B":
+                console.log("B型");
+                break;
+            default:
+                console.log("不存在" + blood + "血型");
+        }
+
+
+
+    </script>
+</body>
+
+</html>
