@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 水費查詢程式
+        // 情境一
+        var n = 8;
+
+        if (1 <= n && n <= 10) {
+            var result = n * 7.35;
+        } else if (11 <= n && n <= 30) {
+            var result = n * 9.45;
+        } else if (31 <= n && n <= 50) {
+            var result = n * 11.55;
+        } else if (50 < n) {
+            var result = n * 12.075;
+        }
+        console.log("實付水費為：" + Math.round(result) + "元")
+
+        // 情境二
+        var n = 48;
+
+        if (1 <= n && n <= 10) {
+            var result = n * 7.35;
+        } else if (11 <= n && n <= 30) {
+            var result = n * 9.45;
+        } else if (31 <= n && n <= 50) {
+            var result = n * 11.55;
+        } else if (50 < n) {
+            var result = n * 12.075;
+        }
+        console.log("實付水費為：" + Math.round(result) + "元");
+
+    </script>
+</body>
+
+</html>
