@@ -67,6 +67,37 @@
                 break;
         }
 
+        // 訂正
+        // 情境一
+
+        ticket = prompt("請選擇票種");
+        amount = prompt("請選擇張數");
+
+        var ticket = 1;
+        var amount = 2;
+
+        if (ticket > 0 && ticket <= 3) {
+            if (amount > 0) {
+                switch (ticket) {
+                    case 1:
+                        var result = 500 * amount;
+                        console.log("全票" + `${amount}` + "張，票價為：" + result)
+                        break;
+                    case 2:
+                        var result = 500 * 0.8 * amount;
+                        console.log("優待票" + `${amount}` + "張，票價為：" + result)
+                        break;
+                    case 3:
+                        var result = 500 * 0.8 * 0.7 * amount;
+                        console.log("敬老票" + `${amount}` + "張，票價為：" + result)
+                        break;
+                }
+            } else {
+                alert("票種錯誤")
+            }
+        } else {
+            alert("張數錯誤");
+        }
     </script>
 </body>
 
