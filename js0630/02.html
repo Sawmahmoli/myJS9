@@ -38,6 +38,30 @@
         }
         console.log("實付水費為：" + Math.round(result) + "元");
 
+        // 老師解答
+        // 有浮點數使用四捨五入 Math.round()
+        // 無條件捨去 Math.floor()
+        // 無條件進位 Math.ciel()
+
+        // switch無法作區間條件判斷 使用if else
+        // 變數宣告影響效能 記憶體效能差 管理不易
+
+        var water = 8;
+        var price = 0
+        // 變數宣告預設為空值或字符
+        if (water >= 1 && water <= 10) {
+            price = 7.35;
+        } else if (water >= 11 && water <= 30) {
+            price = 9.45;
+        } else if (water >= 31 && water <= 50) {
+            price = 11.55;
+        } else if (water > 50) {
+            price = 12.075;
+        } else {
+            console.log("度數錯誤");
+        }
+        console.log(`用水度數：${water}，每度：${price}，實付水費：${Math.round(water * price)}`);
+
     </script>
 </body>
 
