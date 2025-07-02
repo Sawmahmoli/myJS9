@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>for</h1>
+    <hr>
+    <script>
+        // for(參數1 ; 參數2 ; 參數3)
+        // 參數1：建立迴圈變數
+        // 參數2：執行迴圈的條件（驗證變數狀態）
+        // 參數3：迴圈變數的增減值
+        // i=i+1=>++ 遞增
+        for (var i = 1; i <= 5; i = i + 1) {
+            document.write("hi<br>");
+        }
+
+        // 參數可直接輸出
+        for (var i = 1; i <= 5; i = i + 1) {
+            document.write("hi<br>");
+        }
+
+        // 1-10的合計
+        // 題目一
+        // 奇偶數判斷，檢查每一個值
+        for (var i = 1; i <= 10; i++) {
+            if (i % 2 == 1) {
+                document.write(i + ",");
+            }
+        }
+
+        // 題目二
+        // 等差為2
+        for (var i = 1; i <= 10; i+2) {
+            // for(var i=1; i<= 10; i=i+2)
+            if (i % 2 == 1) {
+                document.write(i + ",");
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

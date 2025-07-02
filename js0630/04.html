@@ -67,29 +67,66 @@
                 break;
         }
 
-        // 情境三
         // 訂正
-        var ticket = 3;
+        // 情境一
+
+        ticket = prompt("請選擇票種");
+        amount = prompt("請選擇張數");
+
+        var ticket = 1;
         var amount = 2;
 
+        if (ticket > 0 && ticket <= 3) {
+            if (amount > 0) {
+                switch (ticket) {
+                    case 1:
+                        var result = 500 * amount;
+                        console.log("全票" + `${amount}` + "張，票價為：" + result)
+                        break;
+                    case 2:
+                        var result = 500 * 0.8 * amount;
+                        console.log("優待票" + `${amount}` + "張，票價為：" + result)
+                        break;
+                    case 3:
+                        var result = 500 * 0.8 * 0.7 * amount;
+                        console.log("敬老票" + `${amount}` + "張，票價為：" + result)
+                        break;
+                }
+            } else {
+                alert("票種錯誤")
+            }
+        } else {
+            alert("張數錯誤");
+        }
+
+        //老師解答後訂正
+        var ticket = 1;     //票種 
+        var price = 0;      //單一票價
+        var type = "";      //票種名稱
+        var amount = 2;     //張數
+        var errFlag = "N";  //識別變數
+
         switch (ticket) {
+            default:
+                console.log("ERR!票價種類不存在")
+                break;
             case 1:
-                var result = 500 * amount;
-                console.log("全票" + `${amount}` + "張，票價為：" + result)
+                price = 500;
+                type = "全票";
                 break;
             case 2:
-                var result = 500 * 0.8 * amount;
-                console.log("優待票" + `${amount}` + "張，票價為：" + result)
+                price = 500 * 0.8;
+                type = "優待票";
                 break;
             case 3:
-                var result = 500 * 0.8 * 0.7 * amount;
-                console.log("敬老票" + `${amount}` + "張，票價為：" + result)
+                price = 500 * 0.8 * 0.7;
+                type = "敬老票";
                 break;
+        }if (errFlag == "N") {
+            console.log(`${type}${amount}張 票價為${price * amount}`);
         }
 
     </script>
-
-    
 </body>
 
 </html>

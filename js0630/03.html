@@ -10,22 +10,18 @@
 <body>
     <script>
         // 分數等級程式
-        // var score = 82;
+        var score = 82;
 
-        // if (80 <= score <= 100) {
-        //     console.log("成績等級為甲等");
-        // } else if (70 <= score <= 79) {
-        //     console.log("成績等級為乙等");
-        // } else if (60 <= score <= 69) {
-        //     console.log("成績等級為丙等");
-        // } else if (0 <= score <= 59) {
-        //     console.log("成績等級為丁等");
-        // }
+        if (80 <= score <= 100) {
+            console.log("成績等級為甲等");
+        } else if (70 <= score <= 79) {
+            console.log("成績等級為乙等");
+        } else if (60 <= score <= 69) {
+            console.log("成績等級為丙等");
+        } else if (0 <= score <= 59) {
+            console.log("成績等級為丁等");
+        }
 
-    </script>
-
-    <script>
-        // 分數等級程式
         // 訂正
         var score = 82;
 
@@ -38,6 +34,26 @@
         } else if (0 <= score && score <= 59) {
             console.log("成績等級為丁等");
         }
+
+        // 老師解答
+        // 先預防錯誤動作！提前判斷狀態以減少耗能
+        // crtl+D 選取多項 insert輸入修改內容 esc取消選取
+        var intScore = 82;
+        var strLevel = "";
+
+        if (intScore < 0 || intScore > 100) {
+            console.log("ERR!不是有效數值範圍")
+        } else {
+            if (80 >= intScore && intScore <= 100) {
+                strLevel = "甲";
+            } else if (70 >= intScore && intScore <= 79) {
+                strLevel = "乙";
+            } else if (60 >= intScore && intScore <= 69) {
+                strLevel = "丙";
+            } else {
+                strLevel = "丁";
+            }
+        } console.log(`分數：${intScore}=>成績等級為${strLevel}等`);
 
     </script>
 </body>
