@@ -43,15 +43,17 @@
 
         if (intScore < 0 || intScore > 100) {
             console.log("ERR!不是有效數值範圍")
-        } else if (80 >= intScore && intScore <= 100) {
-            console.log(`分數：${intScore} 成績等級為甲等`);
-        } else if (70 >= intScore && score <= 79) {
-            console.log(`分數：${score} 成績等級為乙等`);
-        } else if (60 >= score && score <= 69) {
-            console.log(`分數：${score} 成績等級為丙等`);
         } else {
-            console.log(`分數：${score} 成績等級為丁等`);
-        }
+            if (80 >= intScore && intScore <= 100) {
+                strLevel = "甲";
+            } else if (70 >= intScore && intScore <= 79) {
+                strLevel = "乙";
+            } else if (60 >= intScore && intScore <= 69) {
+                strLevel = "丙";
+            } else {
+                strLevel = "丁";
+            }
+        } console.log(`分數：${intScore}=>成績等級為${strLevel}等`);
 
     </script>
 </body>
