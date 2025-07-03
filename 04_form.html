@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<label for="">NUMBER1</label>
+<input type="number" id="n1">
+<br><br>
+<label for="">NUMBER2</label>
+<input type="number" id=""n2>
+<br><br>
+<button onclick="tot()">++</button>
+<br>
+<P id="result">TOTAL</P>
+
+    <script>
+        // 建立一個加總函式
+        function tot(){
+            // 取得 n1 位置
+            var n1 = document.getElementById("n1");
+            // 取得 n2 位置
+            var n1 = document.getElementById("n1");
+
+            // 取得 n1 的內容顯示在指定位置
+            document.getElementById("result"). textContent = n1.value + n2.value;
+        }
+
+    </script>
+</body>
+</html>

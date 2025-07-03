@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 題目一
+        // 請計算1-10的和
+        document.write("請計算1-10的和" + "<br>");
+        /*
+        s=s+i => 累計
+        s=0
+
+        i=1 => s=s+i => s=0+1=1
+        i=2 => s=1+2=3 運算結果+運算式2
+        i=3 => s=3+3=6
+        i=4 => s=6+4=10
+        
+        以此類推
+
+        */
+
+        var s = 0;
+        for (var i = 1; i <= 10; i++) {
+            s = s + i;
+        }
+        document.write("1+2+3+...+10=" + s + "<hr>");
+
+
+        // 題目一
+        // 請統計出1-100之間的奇數和(注意!遞增)
+        document.write("請統計出1-100之間的奇數和" + "<br>");
+
+        // 已先宣告s=0
+        // 若重複使用
+        // s變數須歸零
+
+        //老師解答
+        // 遞增 
+        var s1 = 0
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 == 1) {
+                s1 = s1 + i;
+            }
+        }
+        document.write(`1-100之間的奇數和=${s1}` + "<br>");
+
+        // 老師解答
+        // 等差
+        s1 = 0;
+        for (var i = 1; i <= 100; i = i + 2) {
+            s1 = s1 + i;
+        }
+        document.write(`1-100之間的奇數和=${s1}` + "<hr>");
+
+
+
+        // 題目二
+        // 請統計100-1之間的偶數和
+        // 老師解答
+        // 檢查每一個值是否為偶數
+        document.write("請統計出100-1之間的偶數和" + "<br>");
+
+        var s2 = 0;
+        for (var i = 100; i >= 1; i = i - 1) {
+            if (i % 2 == 0) {
+                s2 = s2 + i;
+            }
+        }
+        document.write(`100-1之間的偶數和=${s2}` + "<br>");
+
+        // 老師解答
+        // 等差
+
+        var s2 = 0;
+        for (var i = 100; i >= 2; i = i - 2) {
+            s2 = s2 + i;
+        }
+        document.write(`100-1之間的偶數和=${s2}` + "<hr>");
+
+
+
+        // 題目三
+        // 請統計1-100之間3的倍數同時也是5的倍數和
+        // 100+98+96+...+2
+        document.write("請統計1-100之間是3的倍數同時也是5的倍數和" + "<br>");
+
+        // break僅能放switch或迴圈！
+
+        // 老師解答
+        // 等差 + 巢狀檢查 + 算式結尾符號顯示 "="
+        var endValue = 0;
+        for (var i = 1; i <= 100; i = i--) {
+            if(i%3==0){
+                if(i%5==0){
+                    s3
+                }
+            }
+
+        }
+
+
+        var s3 = 0;
+        for (var i = 1; i <= 100; i++) {
+            // 先檢查是否為3的倍數
+            // 再檢查是否為5的倍數
+            if (i % 3 == 0) {
+                if (i % 5 == 0) {
+                    s3 = s3 + i;
+                    document.write(i + "+");
+                }
+            }
+        }
+        document.write("<br>" + `1-100之間同時是3與5的倍數和=${s3}` + "<br>");
+
+
+        // 老師解答
+        // 邏輯運算子 => &&
+        s3 = 0;
+        for (i = 1; i <= 100; i++) {
+            if (s % 3 == 0 && s % 5 == 0) {
+                s3 = s3 + i;
+                document.write(i);
+                if (i == endValue) {
+                    document.write("=");
+                    break; //已找到最後值 => 結束迴圈
+                } else {
+                    document.write("+")
+                }
+            }
+        }
+        document.write(s3)
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
