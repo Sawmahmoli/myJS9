@@ -9,27 +9,27 @@
 
 <body>
     <script>
-        // nested loop
+
+        /*
+        
+        *
+        **
+        ***
+        ****
+        *****
+        
+        */
+
+        // 巢狀迴圈
         // 外層控制列數、內層控制星星個數
         // 符號執行次數會等於列數
-        // 內層 i = j !! 
+        // 內層 j <= i !! 
 
         for (var i = 1; i <= 5; i++) {
-            for (var j = i; j <= i; j++) {
-                document.write("*")
-            }
-            document.write("<br");
+            for (var j = 1; j <= i; j++) {
+                document.write("*");
+            } document.write("<br>");
         }
-
-        // 老師解答
-
-        // for (var i = 1; i <= 5; i++) {
-        //     for (j = 1; j <= i; j++) {
-        //         document.write("*")
-        //     }
-        //     document.write("<br>");
-        // }
-
 
     </script>
 </body>

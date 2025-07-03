@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 邏輯運算子 => &&
+        // 列出算式 + 結尾符號顯示 "="
+        var s3 = 0;
+        var endValue = 0; // 找出最後一個值使符號顯示"+"
+
+        for (var i = 100; i >= 1; i--) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                endValue = i; // 已找到最後一個值
+                break; // 結束迴圈
+            }
+        }
+
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                s3 = s3 + i;
+                document.write(i);
+                if (endValue == i) {
+                    document.write("=");
+                    break;
+                } else {
+                    document.write("+");
+                }
+            }
+        }
+        document.write(s3);
+
+    </script>
+</body>
+
+</html>
