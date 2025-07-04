@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        請使用亂數產生一個值（1-100），最多能猜3次
+        每次錯誤時，出現提示如下
+        例如：亂數：88
+        77 < 88 => 太小了, 請重新輸入
+        99 > 88 => 太大了, 請重新輸入
+        */
+       
+       // 取亂數*100 ; +1=要猜的數字
+
+       var input = 0;
+       var num = 0;
+       var rd = Math.random()*100;
+
+       do{
+        var input=prompt("猜數字")
+        if(isNaN(Number(input))){
+            alert("錯誤，請重新輸入");
+            continue;
+        }else if(input==""){
+            alert()
+            break;
+        }
+
+       }while(input)
+
+
+
+       console.log(rd);
+
+
+    </script>
+</body>
+</html>

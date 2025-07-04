@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 標籤 -->
+    <label for="n1">NUMBER1</label>
+    <!-- 文字方塊 -->
+    <input type="number" id="n1">
+    <br><br>
+    <label for="n2">NUMBER2</label>
+    <input type="number" id="n2">
+    <br><br>
+    <button onclick="tot()">++</button>
+    <br>
+    <p id="result">TOTAL</p>
+
+    <script>
+        
+        // 建立一個加總函式
+        function tot() {
+            // 取得NUMBER1位置
+            var n1 = document.getElementById("n1");
+            console.log(n1.value);
+            // 取得NUMBER2位置
+            var n2 = document.getElementById("n2");
+            
+            /*
+            // 查看型別 typeof
+            console.log("轉換前 => " + typeof n1.value);
+            // 字串轉數值
+            console.log("轉換後 => " + typeof parseInt(n1.value));
+            // 數值轉字串 => 數值資料.toString()
+            var strNum="123";
+            console.log("數值轉字串 => "+typeof strNum.toString());
+            */
+
+            // 取得數值1的內容顯示在指定位置
+            document.getElementById("result").textContent = parseInt(n1.value) + parseInt(n2.value);
+            console.log(n1.value);
+        }
+    </script>
+
+</body>
+
+</html>

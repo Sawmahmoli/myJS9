@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <h1>成績輸入</h1>
+    <p>請輸入成績N次, 直到輸入-1時結束</p>
+    <p>並統計出如下</p>
+    <ul>
+        <li id="pass">及格人數</li>
+        <li id="fail">不及格人數</li>
+        <li id="tot">全班總分</li>
+        <li id="avg">全班平均</li>
+    </ul>
+    <hr>
+
+    <script>
+        // var n = 0;
+        // var score = 0;
+        // var tot = 0;
+        // var avg = 0;
+
+        // do {
+        //     var score = prompt("請輸入成績");
+        //     if (score == null) {
+        //         alert("取消後將關閉系統！");
+        //         break;
+        //     } else if (score == "") {
+        //         alert("成績不能空白，請重新輸入");
+        //     } else if (isNaN(Number(score))) {
+        //         alert("成績錯誤，請重新輸入");
+        //         continue;
+        //     }else if (score == -1){
+        //         alert("結束計算！")
+        //         document.write(score)
+        //     }
+        // }
+        // while (1);
+        // document.write(score)
+        
+        // // if(score=)
+        // // score = score + n;
+        // // document.write(score);
+    </script>
+
+    <script>
+    var pass = 0;
+    var fail = 0;
+    var tot = 0;
+    var avg = 0;
+
+    while (1) {
+            var score = prompt("請輸入成績");
+            if (score == null) {
+                alert("取消後將關閉系統！");
+                break;
+            } else if (score == "") {
+                alert("成績不能空白，請重新輸入");
+            } else if (isNaN(Number(score))) {
+                alert("成績錯誤，請重新輸入");
+                continue;
+            } else if (score == -1) {
+                alert("結束計算！")
+                score = score + (pass+fail)
+                document.write(score)
+            }
+        }
+    </script>
+</body>
+
+</html>

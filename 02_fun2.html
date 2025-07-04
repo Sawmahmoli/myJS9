@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 標籤 -->
+    <label for="n1">NUMBER1</label>
+    <!-- 文字方塊 -->
+    <input type="number" id="n1">
+    <br><br>
+    <button onclick="tot()">+</button>
+    <button onclick="sub()">-</button>
+    <button onclick="mil()">*</button>
+    <button onclick="div()">/</button>
+    <br><br>
+    <label for="n2">NUMBER2</label>
+    <input type="number" id="n2">
+    <br><br>
+    <p id="result">TOTAL</p>
+
+    <!-- 
+    1) 加 (加法) addition
+    2) 減 (減法) subtraction
+    3) 乘 (乘法) multiplication
+    4) 除 (除法) divisoin
+    -->
+
+    <script>
+        var n1 = document.getElementById("n1");
+        var n2 = document.getElementById("n2");
+        var result=document.getElementById("result");
+
+        function tot() {
+            result.textContent = parseInt(n1.value) + parseInt(n2.value);
+        }
+
+        function sub() {
+            result.textContent = parseInt(n1.value) - parseInt(n2.value);
+        }
+
+        function mil() {
+            result.textContent = parseInt(n1.value) * parseInt(n2.value);
+        }
+
+        function div() {
+            // 取小數位 => toFixed 小數位
+            result.textContent = (parseInt(n1.value) / parseInt(n2.value)).toFixed(2);
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
