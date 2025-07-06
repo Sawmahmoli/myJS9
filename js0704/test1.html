@@ -19,58 +19,100 @@
         <li id="avg">全班平均</li>
     </ul>
     <hr>
-
     <script>
         // var n = 0;
         // var score = 0;
         // var tot = 0;
         // var avg = 0;
-
-        // do {
-        //     var score = prompt("請輸入成績");
-        //     if (score == null) {
-        //         alert("取消後將關閉系統！");
-        //         break;
-        //     } else if (score == "") {
-        //         alert("成績不能空白，請重新輸入");
-        //     } else if (isNaN(Number(score))) {
-        //         alert("成績錯誤，請重新輸入");
-        //         continue;
-        //     }else if (score == -1){
-        //         alert("結束計算！")
-        //         document.write(score)
-        //     }
-        // }
-        // while (1);
-        // document.write(score)
         
-        // // if(score=)
-        // // score = score + n;
-        // // document.write(score);
-    </script>
+        // do {
+            //     var score = prompt("請輸入成績");
+            //     if (score == null) {
+                //         alert("取消後將關閉系統！");
+                //         break;
+                //     } else if (score == "") {
+                    //         alert("成績不能空白，請重新輸入");
+                    //     } else if (isNaN(Number(score))) {
+                        //         alert("成績錯誤，請重新輸入");
+                        //         continue;
+                        //     }else if (score == -1){
+                            //         alert("結束計算！")
+                            //         document.write(score)
+                            //     }
+                            // }
+                            // while (1);
+                            // document.write(score)
+                            
+                            // // if(score=)
+                            // // score = score + n;
+                            // // document.write(score);
+                            </script>
 
-    <script>
-    var pass = 0;
-    var fail = 0;
-    var tot = 0;
-    var avg = 0;
+<script>
+        var pass = 0;
+        var fail = 0;
+        var tot = 0;
+        var avg = 0.00;
 
-    while (1) {
+        while (1) {
+            // 輸入分數
             var score = prompt("請輸入成績");
+
+            // 判斷有無資料
+            // (1)取消
             if (score == null) {
                 alert("取消後將關閉系統！");
                 break;
-            } else if (score == "") {
+
+            // (2)空白
+            } else if (score.trim() == "") {
                 alert("成績不能空白，請重新輸入");
-            } else if (isNaN(Number(score))) {
+                continue;
+
+            // (3)有資料 => 將字元轉數值
+            } else if (score == -1) {
+                alert("結束計算！");
+                break;
+            }
+            
+            // 轉換輸入內容資料型別
+            score = Number(score);
+
+            // 判斷輸入內容資料是否可以運算
+            // (1)非數字 => 無法
+            if (isNaN(Number(score))) {
                 alert("成績錯誤，請重新輸入");
                 continue;
-            } else if (score == -1) {
-                alert("結束計算！")
-                score = score + (pass+fail)
-                document.write(score)
+                
+            // (2)數字 => 進行運算
+            } else if (score < -1 || score > 100) {
+                alert("請輸入0-100之間的數字");
+                continue;
             }
+            
+            // 判斷數值內容
+            // (1)及格
+            if (score >= 60) {
+                pass++;
+            // (2)不及格
+            } else {
+                fail++;
+            }
+
+            tot = tot + score;
+            avg = tot / (pass + fail);
+
+            var result = document.getElementById("result");
+            console.log(`${tot}/(${pass}+${fail})=${+avg}`)
+            result.innerHTML = `
+            <ul>
+                <li>及格&nbsp;${pass}&nbsp;人<br>
+                <li>不及格&nbsp;${fail}&nbsp;人<br>
+                <li>全班總分${tot}分<br>
+                <li>全班平均${avg.toFixed(2)}分
+            </ul>`
         }
+
     </script>
 </body>
 
