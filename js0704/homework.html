@@ -33,7 +33,6 @@
             // (1)取消
             if (input.trim() == null) {
                 alert("取消後系統即關閉");
-
                 break;
 
                 // (2)空白 
@@ -50,35 +49,33 @@
             // 判斷有效範圍
             // 定義上下界
 
+            var i;
+            var j;
+
+            i = 1;
+            j = 100;
+
             // (1)太小
-            while (1) {
-                var i;
-                var j;
+            if (input < rd) {
+                i = input;
+                alert(`太小了，請重新輸入(提示:${i}-${j})`);
+                console.log(rd);
+                continue;
 
-                i = 1;
-                j = 100;
+                // (2)太大
+            } else if (input > rd) {
+                j = input;
+                alert(`太大了，請重新輸入(提示:${i}-${j})`);
+                console.log(rd);
+                continue;
 
-                if (input < rd) {
-                    i = input;
-                    alert(`太小了，請重新輸入(提示:${i}-${j})`);
-                    console.log(rd)
-                    continue;
-
-                    // (2)太大
-                } else if (input > rd) {
-                    j = input;
-                    alert(`太大了，請重新輸入(提示:${i}-${j})`);
-                    console.log(rd)
-                    continue;
-
-                    // (3)正確
-                } else if (input == (Math.floor(rd) + 1)) {
-                    break;
-                }
-
+                // (3)正確
+            } else if (input == (Math.floor(rd) + 1)) {
+                break;
             }
-        }
-        document.write(`恭喜你！猜對了！答案是${rd}`)
+
+        } while (1);
+        document.write(`恭喜你！猜對了！答案是${(Math.floor(rd) + 1)}`);
 
     </script>
 </body>
