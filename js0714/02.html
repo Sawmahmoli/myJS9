@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 若無label會導致影響SEO不佳 -->
+    <label for=""></label>
+    <h1>function-02</h1><hr>
+    請輸入姓名：<input type="text" id="name">
+    <!-- 按鈕呼叫函式 -->
+    <button onclick="sayHi4()">確定</button>
+    <p id="show"></p>
+
+    <script>
+        // (1) 無參數無回傳值
+        function sayHi1(){
+            // 取得文字方塊內容
+            let name1=document.getElementById("name").value;
+            // 取得顯示段落
+            let show=document.getElementById("show");
+            // 顯示結果
+            show.textContent=`Hi!${name1}`;
+
+        }
+       
+
+        // (2) 無參數有回傳值 => 此範例不適合
+        function sayHi2(){
+            // 取得文字方塊內容
+            let name1=document.getElementById("name").value;
+            // 取得顯示段落
+            let show=document.getElementById("show");
+            // 顯示結果
+            show.textContent=`Hi!${name1}`;
+            // 回傳前已完成顯示結果 => 此案例不適合
+            return name1;
+        }
+        
+
+        // (3)有參數無回傳值 => 函式夾函式
+        function sayHi3(userName){
+            // 取得顯示段落
+            let show=document.getElementById("show");
+            // 顯示結果
+            show.textContent=`Hi!${userName}`; 
+        }
+
+        // 取得姓名 =>無參數有回傳值
+        function getName(){
+            // 取得文字方塊內容
+            let name1=document.getElementById("name").value;
+            return name1;
+        }
+
+        // (4)有參數有回傳值 => 此範例不適合
+        function sayHi4(userName){
+            return userName;
+        }
+
+
+    </script>
+</body>
+</html>

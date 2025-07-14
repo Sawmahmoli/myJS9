@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>function-01</h1><hr>
+    請輸入姓名：<input type="text" id="name">
+    <!-- 按鈕呼叫函式 -->
+    <button onclick="sayHi4(getName())">確定</button>
+    <p id="show"></p>
+    <script>
+        // 建立函式
+        // 參數不以數字開頭
+
+        /*
+        // (1) 有參數沒有傳回值
+        function sum(a,b){
+            // let a=5;
+            // let b=3;
+            console.log(a+b);
+        }
+        
+        // 呼叫函式
+        sum(5,3);   // 8
+        sum(50,30); // 80
+        sum(-1,3);  // 2
+        sum(-1,-3); //-4
+        */
+
+        /*
+        // (2) 有參數有傳回值
+        function sum(a,b){
+            // let c=a+b;
+            // return c;
+            // 沒有複雜計算可以省略宣告
+            return a+b;
+        }
+        // 函式結束，變數亦結束
+        // 在函式外宣告變數
+
+        // 呼叫函式
+        let n1=50;
+        let n2=30;
+        // 
+        let tot=sum(n1, n2);
+        document.write(`${n1}+${n2}=${tot}`);
+        */
+
+        /*
+        // (3) 無參數無回傳值
+        function sayHi1(){
+            alert("Hi!");
+        }
+        
+        //若無呼叫函式則無法執行 
+        sayHi1();
+        */
+        
+        /*
+        // (4) 有參數無回傳值
+        function sayHi2(name){
+            alert("Hi!"+name);
+        }
+        
+        let userName=prompt("請出入名稱");
+        sayHi2(userName);
+        */
+
+        // (5) 無參數無回傳值 => 表單文字方塊使用
+        
+        /*
+        function sayHi3(){
+            // 取得文字方塊的位置
+            let name=document.getElementById("name");
+            // 取得文字資料的位置
+            let show=document.getElementById("show");
+            
+            // .textContent => 顯示完整字元
+            // show.textContent="Hi!"+name.value;
+
+            // .innerHTML => 顯示HTML標籤
+            // show.innerHTML="Hi!"+name.value;
+            
+            // \n => 跳脫字元：換行
+            show.innerText="Hi, \n"+name.value;
+        }
+        */
+        
+        // (6) 無參數無回傳值 => 函式夾函式
+        function sayHi4(name1){
+            // 取得顯示段落
+            let show=document.getElementById("show");
+            // 顯示結果
+            show.textContent="Hi!"+name1;
+        }
+
+        // 取得文字
+        function getName(){
+            let name1= document.getElementById("name").value;
+            return name1;
+        }
+        
+        </script>
+</body>
+</html>
