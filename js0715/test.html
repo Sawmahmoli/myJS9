@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // (1)
+        // 函式 printMany ，輸出1, 2, 3, ..., 100
+        function printMany() {
+            for (let i = 1; i <= 100; i++) {
+                console.log(i);
+            }
+        }
+        // printMany();
+
+
+        // (2)
+        // 函式 printEvery3 ，輸出1, 4, 7, ..., 88
+        function printEvery3() {
+            for (let i = 1; i <= 88; i = i + 3) {
+                console.log(i);
+            }
+        }
+        // printEvery3();
+
+        // (3)
+        // 函式stars，輸出連續n個*
+        function stars(n) {
+            for (let i = 1; i <= n; i++) {
+                console.log(n);
+            }
+        }
+        stars(3);
+        stars(10);
+
+        // (4)
+        // 函式 isUpperCase，檢查第一個字母是否為大寫
+        // 使用轉大寫函式 => toUpperCase()
+        let str="";
+        let arr4=str.split("")
+        console.log(arr4);
+
+        function isUpperCase(n){
+            // 將變數轉大寫
+            n=toUpperCase(n);
+            console.log(typeof (n));
+            // 檢查是否相同
+            if(n == toUpperCase(n)){
+               console.log("true") 
+            }
+        }
+        isUpperCase(n); //true
+        // console.log(isUpperCase("ABCD"));
+        // console.log(isUpperCase(""));
+        // console.log(isUpperCase("aBCD"));
+
+        // (5)
+        // 函式 isAllUpperCase，檢查所有字母是否為大寫
+
+
+
+
+    </script>
+</body>
+
+</html>

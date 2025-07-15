@@ -1,4 +1,3 @@
-
 // 排序前
 let sortBefore = document.getElementById("sortBefore");
 // 排序後
