@@ -23,7 +23,7 @@
         */
 
         var input = 0;
-        var rd = (Math.random() * 100);
+        var rd = (Math.floor(Math.random()*100)+1);
 
         do {
             // 輸入數字
@@ -36,7 +36,7 @@
                 break;
 
                 // (2)空白 
-            } else if (input == "") {
+            } else if (input.trim == "") {
                 alert("空白，請重新輸入");
                 continue;
 
@@ -60,7 +60,6 @@
                 i = input;
                 alert(`太小了，請重新輸入(提示:${i}-${j})`);
                 console.log(rd);
-                continue;
 
                 // (2)太大
             } else if (input > rd) {
@@ -70,12 +69,12 @@
                 continue;
 
                 // (3)正確
-            } else if (input == (Math.floor(rd) + 1)) {
+            } else if (input == rd) {
                 break;
             }
 
         } while (1);
-        document.write(`恭喜你！猜對了！答案是${(Math.floor(rd) + 1)}`);
+        document.write(`恭喜你！猜對了！答案是${rd}`);
 
     </script>
 </body>
