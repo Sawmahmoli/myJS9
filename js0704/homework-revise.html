@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        請使用亂數產生一個值（1-100）
+        每次錯誤時，出現提示如下
+
+        例如：
+        亂數值：60
+        第1次：50 => 太小了（提示：50-100）
+        第2次：90 => 太大了（提示：50-90）
+        第3次：80 => 太大了（提示：50-80）
+        第4次：55 => 太小了（提示：55-80）
+        第5次：60 => 猜對了
+        */
+
+        let input = 0;
+        let rd = (Math.floor(Math.random()*100)+1);
+        // 有效範圍
+        let min=1;
+        let max=100;
+        // 執行次數
+        let count=0;
+        // 存放每次執行後的訊息
+        let strMsg="";
+
+
+        do {
+            // 輸入數字
+            count++;
+            let input = prompt(`猜數字，請輸入${min}-${max}之間的數字`);
+
+            // 判斷有無資料
+            // (1)取消
+            if (input.trim() == null) {
+                alert("取消後系統即關閉");
+                break;
+
+                // (2)空白 
+            } else if (input.trim == "") {
+                alert("空白，請重新輸入");
+                continue;
+            }
+
+                // (3)有資料 => 判斷資料型別
+            input=parseInt(input);
+            if (isNaN((input))) {
+                alert("錯誤，請重新輸入");
+                continue;
+            }
+
+            // 判斷有效範圍
+            if(input<=0 || input>100){
+                alert("有效範圍錯誤")
+                continue;
+            }
+
+            // (1)正確
+            if (input === rd) {
+                document.write(`恭喜你！在第${count}次猜對了，答案是${rd}<br>`);
+                break;
+            }
+                
+                // (2)太小
+            if (input < rd) {
+                min = input;
+                alert(`太小了，請請輸入${min}-${max}的數字`);
+                strMsg=strMsg+`第${count}次：太小了，請輸入${min}-${max}的數字<br>`;
+                // (3)太大
+            } else if (input > rd) {
+                max = input;
+                alert(`太大了，請請輸入${min}-${max}的數字`);
+                strMsg=strMsg+`第${count}次：太小了，請輸入${min}-${max}的數字<br>`;
+
+            }
+
+        } while (1);
+        // document.write(strMsg);
+        // 指定顯示位置
+        let result=document.getElementById("result");
+        // 有換行標籤 不用textcontent
+        result.innerHTML=strMsg;
+
+    </script>
+</body>
+
+</html>
