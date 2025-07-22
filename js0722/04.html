@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 函數的回傳值(return)再討論
+
+        // 建立checkScore函式
+        // 若超出分數有效範圍 => 離開函式
+        // 若否 => 判斷是否及格
+        let checkScore = (score) => {
+            // 判斷是否超出範圍
+            if (score < 0 || score > 100) {
+                console.log("超出有效範圍！")
+                return;  // 結束函式 => return
+                // if...else 結束判斷式 => break
+            }
+            // 判斷是否及格
+            if (score >= 60) {
+                console.log("及格！")
+            } else {
+                console.log("不及格")
+            }
+
+        }
+        checkScore(10);
+
+    </script>
+</body>
+
+</html>

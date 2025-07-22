@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 兩數相加
+        function add(n1, n2) {
+            return n1 + n2;
+        }
+        console.log(add(3, 4));
+
+        // 匿名函式
+        // function後面無命名，直接放變數值
+        let add2 = function (n1, n2) {
+            return n1 + n2;
+        }
+        console.log(add2(10, 8));
+
+        // 請傳送半徑算出圓面積(pi*r*r)，pi=3.14
+        let circle = function (r) {
+            let pi = 3.14;
+            return pi * r * r;
+        }
+        console.log(circle(34));
+
+        // 老師解答
+        let getArea1 = function (r) {
+            // 建立一個常數值
+            // 執行中的值不能變更，一旦更改會出現錯誤
+            const pi = 3.14;
+            return pi * r * r;
+        }
+        console.log(getArea(4));
+
+        // 箭頭函式 arrow function
+        let getArea2 = (r) => {
+            // 建立常數
+            const pi = 3.14;
+            return pi * r * r;
+        }
+        console.log(getArea(7));
+
+    </script>
+</body>
+
+</html>

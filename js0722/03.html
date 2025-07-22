@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // add()
+        // 計算所有參數總和
+        /*
+        let add = (n1, n2) => {
+            let tot = n1 + n2;
+            return tot;
+        }
+        */
+
+        // 其餘參數
+        // 接收不同參數值的個數
+        let add1 = (...number) => {
+            let tot = 0;
+            // for of 迴圈只要無接收資料即結束
+            for (let n of number) {
+                tot += n;
+                // tot=tot+n
+            }
+            return tot;
+
+            // for
+            /*
+            for(let n=0; n<number.length; n++){
+                tot=number[i];
+            }
+                */
+        }
+        console.log(add1(5, 3, 7))  // [5,3,7] 以陣列概念使用for of迴圈顯示變數資料
+
+        // 其餘陣列參數
+        // 以陣列接收變數值 => 若非使用其餘參數，會出現錯誤
+        let add2 = (...[x, y, z = 0]) => {
+            return x + y + z;
+        }
+        console.log(add2(7, 3, 1));
+
+
+    </script>
+</body>
+
+</html>
