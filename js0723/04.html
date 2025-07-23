@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 建立一個名稱為User函式作為物件的樣板
+        // 屬性有name, age => showMsg()方法
+        // 字首大寫
+
+        function User(myName, myAge, myHeight, myWeight) {
+            // 加上this => 識別為此函式參數
+            this.name = myName;
+            this.age = myAge;
+            this.height = myHeight;
+            this.weight = myWeight;
+
+            this.showBMI = function () {
+                let bmi = this.weight / Math.pow(this.height / 100, 2);
+                bmi = bmi.toFixed(2);
+                console.log(bmi);  // 若function不輸出 => return bmi;
+
+            }
+        }
+
+
+        // 使用物件樣板要用new關鍵字
+        let user1 = new User('春華', 65, 159, 63);
+        console.log(user1);
+        user1.showBMI();  // function裡已輸出 => 呼叫函式即可console
+
+        let user2 = new User('朝妹', 79, 147, 43);
+        console.log(user2);
+        user2.showBMI();
+
+
+    </script>
+</body>
+
+</html>

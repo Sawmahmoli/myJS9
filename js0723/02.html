@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 建立物件
+        // let => 定義名稱不能重複
+        let user = {
+            // 屬性成員
+            name: "淑櫻",  // 不同物件成員以「,」隔開
+            age: 18,
+
+            // 方法成員
+            showMsg: function () {
+                // 使用「.」取得物件中的屬性成員 => 物件.屬性
+                // (1)
+                console.log(user.name + "的櫻，是櫻櫻美代子的櫻");
+                // (2) this. => 只存在物件中的內容
+                console.log(this.name + "的櫻，是櫻櫻美代子的櫻");
+
+                // 使用「[]」取得物件中的屬性成員 => 物件["屬性名稱"]
+                // (1)
+                console.log(`${user['name']}永遠${user['age']}歲！`);
+                console.log(user["name"] + "永遠" + user["age"] + "歲！");
+            }
+        };  // 以「;」結束物件
+
+
+        // 取得物件屬性
+        console.log(`大名：${user.name}`)
+        console.log(`芳齡：${user.age}歲`)
+
+        // 取得物件方法
+        user.showMsg();
+
+        // 變更物件的屬性
+        // 物件名稱 . 屬性名稱 = 屬性值
+        user.age = 38;
+        console.log(user.age);
+        console.log(user['age']);
+
+        // 刪除物件的屬性：刪除後再取得此屬性 => 回傳undefined
+        // delete 物件名稱.屬性
+        delete user.age
+        console.log(user.age);
+
+        // 刪除後無法再次定義
+        /*
+        let user={
+            age:28,
+        }
+        */
+
+    </script>
+</body>
+
+</html>

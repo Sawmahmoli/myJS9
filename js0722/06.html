@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         // 將函式當作其他函式的參數
-        let sayHi=()=>{
-            return ;
+        let sayHi = () => {
+            return "Hi,  ";
         }
-        console.log(sayi());
 
-        let welcome
+        // 函式中呼叫另一個函式
+        // (1)
+        let welcome = (name) => {
+            console.log(sayHi() + name);
+
+        }
+        welcome("javaScript");
+
+        // (2)
+        // 函式中的參數為另一函式名稱
+        let welcome2 = (funName, name) => {
+            console.log(funName() + name);
+        }
+        // sayHi為參數！不是執行函式名稱！不加()
+        // 參數回傳給welcome函式執行指令
+        welcome2(sayHi, "javaScript");
 
     </script>
 </body>
+
 </html>

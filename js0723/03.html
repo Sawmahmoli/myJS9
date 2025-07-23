@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 建構子方式
+        // 使用「new」關鍵字建立「空物件」再加入屬性與方法
+        // 建立空物件
+        let user = new Object();  // 概念類似push[]
+
+        // 建立屬性
+        user.name = '淑櫻';
+        user.age = '28';  // 自訂名稱可使用「_」
+
+        // 建立方法
+        user.showMsg = function () {
+            console.log(this.name + '永遠' + this.age + '歲！');
+
+        }
+
+        // 呼叫物件方法
+        user.showMsg();
+
+        // 呼叫物件屬性
+        console.log(user.age);
+
+        // 增加物件屬性
+        user.email = '淑櫻沒有伊妹兒';
+        console.log(user.email);
+
+        // 刪除物件屬性或方法
+        console.log(user);  // 物件無法變成字串顯示
+        delete user.age;
+        console.log(user);
+
+        delete user.showMsg();
+        console.log(user);
+
+        // 增加已刪除屬性
+        user.age = 18;
+        console.log(user.age);
+
+
+
+    </script>
+</body>
+
+</html>

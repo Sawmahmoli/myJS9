@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 將函式當作其他函式的回傳值
+        // 傳回值內容為函式
+
+        // (1)
+        let sayHi = (name) => {
+            return function () {
+                console.log(name);
+            }
+        }
+        // return內容為函式 => 加上()接收
+        sayHi("javaScript")();
+
+
+        // (2)
+        let sayHi2 = (name) => {
+            return console.log(name);
+        }
+        sayHi2("javaScript");
+
+        // (3)
+        let sayHi3 = (name) => {
+            // 傳回值帶有參數 => 呼叫時須加上接收()
+            return function (str1) {
+                console.log("Hi, " + name + str1);
+            }
+        }
+        // 函式名稱 (函式名稱參數) (傳回值函式的參數)
+        sayHi3("javaScript")("早安");
+
+    </script>
+</body>
+
+</html>
