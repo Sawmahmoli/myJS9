@@ -11,18 +11,18 @@
     </style>
 </head>
 <body>
-    <img src="./floristry_01.avif" alt="" id="pic">
+    <img src="../img/floristry_01.avif" alt="" id="pic">
 
     <script>
         let pic=document.querySelector('#pic');
         // 滑鼠碰到圖片 => 換圖
         pic.addEventListener('mouseover', ()=>{
-            pic.src="./floristry_02.avif"
+            pic.src="../img/floristry_02.avif";
         })
 
         // 滑鼠碰到圖片 => 還原
         pic.addEventListener('mouseout', ()=>{
-            pic.src="./floristry_01.avif"
+            pic.src="../img/floristry_01.avif";
         })
     </script>
 </body>
