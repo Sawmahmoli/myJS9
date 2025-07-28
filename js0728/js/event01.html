@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <marquee
+        width="300"
+        height="200"
+        style="background-color: lightpink; color:darkgreen;"
+        onmouseover="stop()"
+        onmouseout="start()"
+        >
+        
+        跑馬燈文字
+    </marquee> -->
+
+    <!-- 事件處理方法 -->
+
+    <!-- (1)標籤綁定 -->
+    <button type="button" onclick="alert('')">顯示訊息(1)</button>  <!-- 引號外雙內單 -->
+
+    <!-- (2)呼叫函式 -->
+    <button type="button" onclick="sayHi('Hi')">顯示訊息(2)</button>
+    <script>
+        function sayHi(str){
+            alert(str);
+        }
+    </script>
+
+    <!-- 監聽事件 -->
+    <button type="button" id="btn1">顯示訊息(3)</button>
+    <script>
+        // (1)getElementById
+        /*
+        let btn1=document.getElementById("btn1");
+        btn1.addEventListener('click', function(){  // 箭頭函式
+            alert('Hello!');
+        });
+        */
+
+        /*
+        let btn1=document.getElementById("btn1");
+        btn1.addEventListener('click', ()=>{       // 箭頭函式
+            alert('Hello!');
+        });
+        */
+
+        // (2)使用querySelector()
+        // querySelect要搭配CSS符號
+        let btn1=document.querySelectorAll('#btn1');  //querySelect(取全部標籤時要加All)
+
+
+
+    </script>
+
+
+</body>
+</html>
