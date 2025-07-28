@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <img src="./floristry_01.avif" alt="" id="pic">
+
+    <script>
+        let pic=document.querySelector('#pic');
+        // 滑鼠碰到圖片 => 換圖
+        pic.addEventListener('mouseover', ()=>{
+            pic.src="./floristry_02.avif"
+        })
+
+        // 滑鼠碰到圖片 => 還原
+        pic.addEventListener('mouseout', ()=>{
+            pic.src="./floristry_01.avif"
+        })
+    </script>
+</body>
+</html>
