@@ -16,7 +16,7 @@
                 console.log(i);
             }
         }
-        // printMany();
+        printMany();
 
 
         // (2)
@@ -26,131 +26,67 @@
                 console.log(i);
             }
         }
-        // printEvery3();
+        printEvery3();
 
 
         // (3)
         // 函式stars，輸出連續n個*
-        /*
         function stars(n) {
             for (let i = 1; i <= n; i++) {
-                console.log("*");
-            }
-        }
-        stars(3);
-        stars(10);
-        */
-
-        // (3) 老師解答
-        // 函式stars ，輸出連續N個* => 串接資料
-        function stars(n) {
-            // 存放變數值的地方
-            let result = "";
-            for (let i = 1; i <= n; i++) {
-                // result += "*" 同下
-                result = result + "*";
+                result=result+"*";
             }
             console.log(result);
         }
-        // stars(3);
-        // stars(10);
-
+        stars(3);
+        stars(10);
 
         // (4)
         // 函式 isUpperCase，檢查第一個字母是否為大寫
         // 使用轉大寫函式 => toUpperCase()
-        /*
-        let str="";
-        let arr4=str.split("")
-        console.log(arr4);
-
         function isUpperCase(n){
-            // 將變數轉大寫
-            n=toUpperCase(n);
-            console.log(typeof (n));
-            // 檢查是否相同
-            if(n == toUpperCase(n)){
-               console.log("true") 
-            }
-        }
-        isUpperCase(n); //true
-        */
-        
-
-        // (4) 老師解答
-        // 函式 isUpperCase ，檢查第一個字母是否為大寫
-        // 使用轉大寫函式=>toUpperCase()
-        function isUpperCase(str) {
             // 判斷是否有資料
             // 去除空白取資料長度
-            if (str.trim().length == 0) {
-                return false; //遇到return會回報資料結束函式
+            if(n.trim().length == 0){
+                return false;
             }
-
-            // 以字串為陣列的概念
-            // 取第一個字母
-            /*
-            console.log(str);
-            if(str[0]===str[0].toUpperCase()){
-                return true;
+            console.log(n);
+            // 以字串為陣列概念
+            // 檢查是否相同
+            if(n[0] === n[0].toUpperCase()){
+               return true; 
             }else{
                 return false;
             }
-            */
-            return str[0] === str[0].toUpperCase(); // 同上列判斷式
-
         }
-        isUpperCase("ABCD");
+        console.log(isUpperCase("ABCD"));
+        console.log(isUpperCase(""));
+        console.log(isUpperCase("aBCD"));
 
-        // console.log(isUpperCase(""));
-        // console.log(isUpperCase("aBCD"));
 
-
-        // (5) 老師解答
+        // (5)
         // 函式 isAllUpperCase，檢查所有字母是否為大寫
-        function isAllUpperCase(str) {
+        function isAllUpperCase(n) {
             // 判斷是否有資料
             // 去除空白取資料長度
-            if (str.trim().length == 0) {
-                return false; //遇到return會回報資料結束函式
+            if (n.trim().length == 0) {
+                return false;
             }
-            // 字串迴圈 => 逐字檢查
             // 判斷每個字是否為大寫
+            // 字串迴圈 => 逐字檢查
             for (let i = 0; i < str.length; i++) {
                 // 相等(皆為大寫) => true
+                // 不相等(有小寫) => false 
                 while (str[i] !== str[i].toUpperCase()) {
                     return false;
                 }
             }
-            // 不相等(有小寫) => false 
             return true;
         }
-        // console.log(isAllUpperCase("ABCD"));
-        // console.log(isAllUpperCase(""));
-        // console.log(isAllUpperCase("ABCDEFGHIJKLm"));
+        console.log(isAllUpperCase("ABCD"));
+        console.log(isAllUpperCase(""));
+        console.log(isAllUpperCase("ABCDEFGHIJKLm"));
 
-        // (5) 同學解答
-        function isAllUpperCase(str) {
-            // 判斷是否有資料
-            // 去除空白取資料長度
-            if (str.trim().length == 0) {
-                return false; //遇到return會回報資料結束函式
-            }
-
-            // 判斷轉換大寫前後是否相等
-            /*
-            if(str !== str.toUpperCase()){
-                return false;
-            }
-            return true;
-            */
-            return str !== str.toUpperCase(); // 同上列判斷式
-
-        }
-        // console.log(isAllUpperCase("ABCD"));
-        // console.log(isAllUpperCase(""));
-        // console.log(isAllUpperCase("ABCDEFGHIJKLm"));
     </script>
 </body>
-
+ㄋ
 </html>
