@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // (1)
+        // 函式 printMany ，輸出1, 2, 3, ..., 100
+        function printMany() {
+            for (let i = 1; i <= 100; i++) {
+                console.log(i);
+            }
+        }
+        // printMany();
+
+
+        // (2)
+        // 函式 printEvery3 ，輸出1, 4, 7, ..., 88
+        function printEvery3() {
+            for (let i = 1; i <= 88; i = i + 3) {
+                console.log(i);
+            }
+        }
+        // printEvery3();
+
+
+        // (3)
+        // 函式stars，輸出連續n個*
+        /*
+        function stars(n) {
+            for (let i = 1; i <= n; i++) {
+                console.log("*");
+            }
+        }
+        stars(3);
+        stars(10);
+        */
+
+        // (3) 老師解答
+        // 函式stars ，輸出連續N個* => 串接資料
+        function stars(n) {
+            // 存放變數值的地方
+            let result = "";
+            for (let i = 1; i <= n; i++) {
+                // result += "*" 同下
+                result = result + "*";
+            }
+            console.log(result);
+        }
+        // stars(3);
+        // stars(10);
+
+
+        // (4)
+        // 函式 isUpperCase，檢查第一個字母是否為大寫
+        // 使用轉大寫函式 => toUpperCase()
+        /*
+        let str="";
+        let arr4=str.split("")
+        console.log(arr4);
+
+        function isUpperCase(n){
+            // 將變數轉大寫
+            n=toUpperCase(n);
+            console.log(typeof (n));
+            // 檢查是否相同
+            if(n == toUpperCase(n)){
+               console.log("true") 
+            }
+        }
+        isUpperCase(n); //true
+        */
+        
+
+        // (4) 老師解答
+        // 函式 isUpperCase ，檢查第一個字母是否為大寫
+        // 使用轉大寫函式=>toUpperCase()
+        function isUpperCase(str) {
+            // 判斷是否有資料
+            // 去除空白取資料長度
+            if (str.trim().length == 0) {
+                return false; //遇到return會回報資料結束函式
+            }
+
+            // 以字串為陣列的概念
+            // 取第一個字母
+            /*
+            console.log(str);
+            if(str[0]===str[0].toUpperCase()){
+                return true;
+            }else{
+                return false;
+            }
+            */
+            return str[0] === str[0].toUpperCase(); // 同上列判斷式
+
+        }
+        isUpperCase("ABCD");
+
+        // console.log(isUpperCase(""));
+        // console.log(isUpperCase("aBCD"));
+
+
+        // (5) 老師解答
+        // 函式 isAllUpperCase，檢查所有字母是否為大寫
+        function isAllUpperCase(str) {
+            // 判斷是否有資料
+            // 去除空白取資料長度
+            if (str.trim().length == 0) {
+                return false; //遇到return會回報資料結束函式
+            }
+            // 字串迴圈 => 逐字檢查
+            // 判斷每個字是否為大寫
+            for (let i = 0; i < str.length; i++) {
+                // 相等(皆為大寫) => true
+                while (str[i] !== str[i].toUpperCase()) {
+                    return false;
+                }
+            }
+            // 不相等(有小寫) => false 
+            return true;
+        }
+        // console.log(isAllUpperCase("ABCD"));
+        // console.log(isAllUpperCase(""));
+        // console.log(isAllUpperCase("ABCDEFGHIJKLm"));
+
+        // (5) 同學解答
+        function isAllUpperCase(str) {
+            // 判斷是否有資料
+            // 去除空白取資料長度
+            if (str.trim().length == 0) {
+                return false; //遇到return會回報資料結束函式
+            }
+
+            // 判斷轉換大寫前後是否相等
+            /*
+            if(str !== str.toUpperCase()){
+                return false;
+            }
+            return true;
+            */
+            return str !== str.toUpperCase(); // 同上列判斷式
+
+        }
+        // console.log(isAllUpperCase("ABCD"));
+        // console.log(isAllUpperCase(""));
+        // console.log(isAllUpperCase("ABCDEFGHIJKLm"));
+
+
+        // (6) 老師解答
+        // 函式 position，檢查第一個字母大寫的內容與位置，找不到為-1
+        function position(str) {
+            // 使用迴圈逐一分析資料
+            for (let i = 0; i < str.length; i++) {
+                // 判斷每個值是否為大寫
+                if (str[i] === str[i].toUpperCase()) {
+                    return str[i] + " " + i;
+                }
+            }
+            // 若無則回傳-1
+            return -1;
+        }
+        console.log(position("abcd")); 	// prints -1
+        console.log(position("AbcD"));		// prints A 0
+        console.log(position("abCD")); 	// prints C 2
+
+
+
+        // (7) 老師解答
+        // 函式 findSmallCount，找出陣列中的值，比第2個參數小的總個數
+        function findSmallCount(arr, n) {
+            let counter = 0;
+            for (let i = 0; i < arr.length; i++) {
+                // 陣列中的值若小於n
+                // 次數+1
+                if (arr[1] < n) {
+                    counter++;
+                }
+            }
+            return counter;
+        }
+        console.log(findSmallCount([1, 2, 3], 2));
+        console.log(findSmallCount([1, 2, 3, 4, 5], 0));
+
+
+
+        // (8) 老師解答
+        // 函式 findSmallerTotal，找出陣列中的值，比第2個參數小的總合
+        function findSmallerTotal(arr, n) {
+            // 存放合計的變數
+            let tot = 0;
+            // 使用迴圈逐一找出陣列中的值
+            for (let i = 0; i < arr.length; i++) {
+                // 判斷是否比第2個參數小
+                if (arr[i] < n) {
+                    tot = tot + arr[i];
+                }
+            }
+            return tot;
+
+        }
+        console.log(findSmallerTotal([1, 2, 3], 3)); 			// returns 3
+        console.log(findSmallerTotal([1, 2, 3], 1)); 			// returns 0
+        console.log(findSmallerTotal([3, 2, 5, 8, 7], 999)); 	// returns 25
+        console.log(findSmallerTotal([3, 2, 5, 8, 7], 0)); 		// returns 0
+
+
+        // (9)老師解答
+        // 函式 findAllSmall，找出陣列中的值，比第2個參數小的值保存在新的陣列中
+
+
+        console.log(findAllSmall([1, 2, 3], 10)); 		// returns [1, 2, 3]
+        console.log(findAllSmall([1, 2, 3], 2)); 		// returns [1]
+        console.log(findAllSmall([1, 3, 5, 4, 2], 4)); 	// returns [1, 3, 2]
+
+
+        // (10)老師解答
+        // 函式 sum，加總陣列中的值
+        function sum() {
+
+        }
+        console.log(sum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])); 	// returns 55
+        console.log(sum([])); 							// return 0
+        console.log(sum([-10, -20, -30])); 				// return -60
+
+
+
+    </script>
+</body>
+
+</html>
