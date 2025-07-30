@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        /* 複合式規則 */
+        form span {
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- required => 必須填寫資料 -->
+    <form action="" id="form">
+        <!-- 文字方塊 -->
+        <label for="uid"><span style="color: brown;">*</span>帳號</label>
+        <input type="text" id="uid"><br>
+        <!-- 密碼 -->
+        <label for="upw"><span style="color: brown;">*</span>密碼</label>
+        <input type="password" id="upw"><br>
+
+        <!-- err訊息 -->
+        <span id="msg"></span><br>
+        <!-- 送出 -->
+        <input id=btn type="button" value="確定送出">
+        <!-- 重設 -->
+        <input type="reset" value="重新填寫">
+    </form>
+
+    <script>
+        /*
+        let form=document.querySelector("form");
+        let uid=document.querySelector("uid");
+        let upw=document.querySelector("upw");
+
+        form.addEventListener('focus', ()=>{
+            if (uid.value.length === 0) {
+                msg.textContent = "";
+            } else {
+                msg.textContent = "請填寫此欄位";
+            }
+        });
+        */
+
+        // 老師解答
+        let uid = document.querySelector("#uid");
+        let upw = document.querySelector("#upw");
+        let msg = document.querySelector("msg");
+
+        let btn = document.querySelector('#btn')
+        btn.addEventListener('click', function () {
+
+            let strMsg = "";  // 變數 => 存放所有err訊息
+
+            // 各項目獨立檢查 => 
+
+            // 檢查帳號
+            if (uid.value.length === 0) {
+                strMsg += "帳號無法空白<br>";
+            }
+
+            // 檢查密碼
+            if (upw.value.length === 0) {
+                strMsg += "密碼無法空白<br>";
+            }
+
+            // 檢查訊息結果
+            msg.innerHTML = strMsg;  // <br>標籤
+            msg.style.color = "green";
+
+        })
+    </script>
+</body>
+
+</html>
